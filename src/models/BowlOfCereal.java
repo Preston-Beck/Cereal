@@ -1,5 +1,6 @@
 package models;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class BowlOfCereal {
@@ -7,12 +8,12 @@ public class BowlOfCereal {
     private int bowlSize;
     private boolean freshFruit;
     private ArrayList<Cereal> cereals;
-    private ArrayList<String> validMilkTypes;
 
-    public BowlOfCereal(String milkType, int bowlSize, boolean freshFruit) {
+    public BowlOfCereal(String milkType, int bowlSize, boolean freshFruit, ArrayList<Cereal> cereals) {
         setMilkType(milkType);
         setBowlSize(bowlSize);
         setFreshFruit(freshFruit);
+        setCereals(cereals);
     }
 
     public String getMilkType() {
@@ -20,11 +21,12 @@ public class BowlOfCereal {
     }
 
     public void setMilkType(String milkType) {
-        this.validMilkTypes.add("whole milk");
-        this.validMilkTypes.add("skim milk");
-        this.validMilkTypes.add("low-fat milk");
-        this.validMilkTypes.add("oat milk");
-        this.validMilkTypes.add("almond milk");
+        ArrayList<String> validMilkTypes = new ArrayList<>();
+        validMilkTypes.add("whole milk");
+        validMilkTypes.add("skim milk");
+        validMilkTypes.add("low-fat milk");
+        validMilkTypes.add("oat milk");
+        validMilkTypes.add("almond milk");
         milkType = milkType.toLowerCase();
 
         if(validMilkTypes.contains(milkType))
@@ -58,13 +60,13 @@ public class BowlOfCereal {
         return cereals;
     }
 
-    public void setCereals(ArrayList<Cereal> cereals) {
+    private void setCereals(ArrayList<Cereal> cereals) {
         this.cereals = cereals;
     }
 
-    public void addCereal(Cereal newCereal){
-        cereals.add(newCereal);
-    }
+//    public void addCereal(Cereal newCereal){
+//        cereals.add(newCereal);
+//    }
 
     public int getTotalCalories(){
         int totalCalories = 0;

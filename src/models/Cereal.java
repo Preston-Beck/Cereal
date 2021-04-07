@@ -2,19 +2,19 @@ package models;
 
 import javafx.scene.image.Image;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cereal {
     private String name, brand, cerealBase;
     private boolean driedFruit, nutFree;
     private int caloriesPerServing, servings, healthRating;
     private Image img;
-    private ArrayList<String> ingredients;
+    private List<String> ingredients;
     private ArrayList<String> validCerealBase;
 
     public Cereal(String name, String brand, String cerealBase, boolean driedFruit,
                   boolean nutFree, int caloriesPerServing, int servings, int healthRating,
-                  Image img, ArrayList<String> ingredients) {
-        setValidCerealBase();
+                  List<String> ingredients) {
         setName(name);
         setBrand(brand);
         setCerealBase(cerealBase);
@@ -23,7 +23,7 @@ public class Cereal {
         setCaloriesPerServing(caloriesPerServing);
         setServings(servings);
         setHealthRating(healthRating);
-        setImg(img);
+//        setImg(name);
         setIngredients(ingredients);
     }
 
@@ -32,6 +32,7 @@ public class Cereal {
     }
 
     public void setName(String name) {
+        name = name.toLowerCase().trim();
         if(name.length() >= 2)
             this.name = name;
         else
@@ -43,6 +44,7 @@ public class Cereal {
     }
 
     public void setBrand(String brand) {
+        brand = brand.toLowerCase().trim();
         if(brand.length() >= 2)
             this.brand = brand;
         else
@@ -54,7 +56,18 @@ public class Cereal {
     }
 
     public void setCerealBase(String cerealBase) {
-        if(this.getValidCerealBase().contains(cerealBase.toLowerCase()))
+        ArrayList <String> validCerealBase = new ArrayList<>();
+        validCerealBase.add("wheat");
+        validCerealBase.add("maize");
+        validCerealBase.add("corn");
+        validCerealBase.add("oats");
+        validCerealBase.add("millet");
+        validCerealBase.add("barley");
+        validCerealBase.add("rice");
+        validCerealBase.add("rye");
+        validCerealBase.add("sorghum");
+
+        if(validCerealBase.contains(cerealBase.toLowerCase()))
             this.cerealBase = cerealBase;
         else
             throw new IllegalArgumentException(cerealBase + " is not a member of the valid " +
@@ -114,34 +127,18 @@ public class Cereal {
         return img;
     }
 
-    public void setImg(Image img) {
-        this.img = img;
-    }
+//    public void setImg(String name) {
+//        Image img =
+//    }
 
-    public ArrayList<String> getIngredients() {
+    public List<String> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(ArrayList<String> ingredients) {
+    public void setIngredients(List<String> ingredients) {
         if(ingredients.size() >= 2)
             this.ingredients = ingredients;
         else
             throw new IllegalArgumentException("There must be a minimum of 2 ingredients.");
-    }
-
-    public ArrayList<String> getValidCerealBase() {
-        return validCerealBase;
-    }
-
-    public void setValidCerealBase() {
-        this.validCerealBase.add("wheat");
-        this.validCerealBase.add("maize");
-        this.validCerealBase.add("corn");
-        this.validCerealBase.add("oats");
-        this.validCerealBase.add("millet");
-        this.validCerealBase.add("barley");
-        this.validCerealBase.add("rice");
-        this.validCerealBase.add("rye");
-        this.validCerealBase.add("sorghum");
     }
 }
