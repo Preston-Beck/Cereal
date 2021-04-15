@@ -141,4 +141,9 @@ public class Cereal {
         else
             throw new IllegalArgumentException("There must be a minimum of 2 ingredients.");
     }
+
+    public String toString()
+    {
+        return String.format("%s %s", brand, name);
+    }
 }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="545.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.newCerealViewController">
+   <children>
+      <VBox prefHeight="545.0" prefWidth="725.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Create a new Cereal">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <GridPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="534.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="348.0" minWidth="10.0" prefWidth="163.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="503.0" minWidth="10.0" prefWidth="371.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Name :" />
+                  <Label text="Brand :" GridPane.rowIndex="1" />
+                  <Label text="Cereal Base :" GridPane.rowIndex="2" />
+                  <Label text="Does it have dried fruit?" GridPane.rowIndex="3" />
+                  <Label text="Is it nut free?" GridPane.rowIndex="4" />
+                  <Label text="Calories Per Serving :" GridPane.rowIndex="5" />
+                  <Label text="Servings :" GridPane.rowIndex="6" />
+                  <Label text="Health Rating :" GridPane.rowIndex="7" />
+                  <Label text="Ingredients :" GridPane.rowIndex="8" />
+                  <TextField fx:id="nameText" prefHeight="25.0" prefWidth="197.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="brandText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="cerealBaseComboBox" prefHeight="25.0" prefWidth="401.0" promptText="Select a Cereal Base" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <RadioButton fx:id="driedFruitNo" mnemonicParsing="false" selected="true" text="No" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="driedFruit" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="driedFruitYes" mnemonicParsing="false" text="Yes" toggleGroup="$driedFruit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <RadioButton fx:id="nutFreeYes" mnemonicParsing="false" text="Yes" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="nutFree" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="nutFreeNo" mnemonicParsing="false" selected="true" text="No" toggleGroup="$nutFree" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <Slider fx:id="caloriesSlider" max="500.0" min="50.0" minorTickCount="10" prefHeight="29.0" prefWidth="371.0" value="50.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Slider fx:id="servingsSlider" majorTickUnit="5.0" max="10.0" min="1.0" minorTickCount="1" snapToTicks="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Slider fx:id="healthRatingSlider" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="ingredientsText" promptText="Ex: corn, sugar, marshmellows" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+               </children>
+            </GridPane>
+            <Button fx:id="saveCerealButton" mnemonicParsing="false" onAction="#saveCerealButtonPushed" prefHeight="27.0" prefWidth="115.0" text="Save Cereal" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
