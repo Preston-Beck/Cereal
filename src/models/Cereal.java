@@ -8,7 +8,7 @@ public class Cereal {
     private String name, brand, cerealBase;
     private boolean driedFruit, nutFree;
     private int caloriesPerServing, servings, healthRating;
-    private Image img;
+//    private Image img;
     private List<String> ingredients;
     private ArrayList<String> validCerealBase;
 
@@ -123,9 +123,9 @@ public class Cereal {
             throw new IllegalArgumentException(healthRating + " is not a valid rating. Ratings must be between 0 and 100.");
     }
 
-    public Image getImg() {
-        return img;
-    }
+//    public Image getImg() {
+//        return img;
+//    }
 
 //    public void setImg(String name) {
 //        Image img =
