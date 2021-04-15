@@ -64,10 +64,6 @@ public class BowlOfCereal {
         this.cereals = cereals;
     }
 
-//    public void addCereal(Cereal newCereal){
-//        cereals.add(newCereal);
-//    }
-
     public int getTotalCalories(){
         int totalCalories = 0;
         for (Cereal cereal : cereals) {
@@ -94,14 +90,4 @@ public class BowlOfCereal {
         return totalServings;
     }
 
-//    public String eatCereal(int servingsEaten){
-//        int servingsToBeEaten = servingsEaten;
-//        int totalServings = getTotalServings();
-//        while(totalServings > 0 && servingsEaten > 0){
-//            totalServings --;
-//            servingsEaten --;
-//        }
-//        servingsEaten = servingsToBeEaten
-//        return String.format("%d servings were eaten");
-//    }
 }

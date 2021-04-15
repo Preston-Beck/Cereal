@@ -82,42 +82,43 @@ public class newCerealViewController implements Initializable {
 
     @FXML
     void saveCerealButtonPushed(ActionEvent event) throws IOException {
-        try {
-            boolean driedFruitBoolean = false;
-            if(driedFruitYes.isSelected())
-                driedFruitBoolean = true;
+        if(cerealBaseComboBox.getValue() != null) {
+            try {
+                boolean driedFruitBoolean = false;
+                if (driedFruitYes.isSelected())
+                    driedFruitBoolean = true;
 
-            boolean nutFreeBoolean = false;
-            if(nutFreeYes.isSelected())
-                nutFreeBoolean = true;
+                boolean nutFreeBoolean = false;
+                if (nutFreeYes.isSelected())
+                    nutFreeBoolean = true;
 
-            String ingredientString = ingredientsText.getText();
-            List<String> ingredients = Arrays.asList(ingredientString.split(", "));
+                String ingredientString = ingredientsText.getText();
+                List<String> ingredients = Arrays.asList(ingredientString.split(", "));
 
-            Cereal newCereal = new Cereal(nameText.getText(),
-                    brandText.getText(),
-                    cerealBaseComboBox.getValue(),
-                    driedFruitBoolean,
-                    nutFreeBoolean,
-                    (int)caloriesSlider.getValue(),
-                    (int)servingsSlider.getValue(),
-                    (int)healthRatingSlider.getValue(),
-                    ingredients);
+                Cereal newCereal = new Cereal(nameText.getText(),
+                        brandText.getText(),
+                        cerealBaseComboBox.getValue(),
+                        driedFruitBoolean,
+                        nutFreeBoolean,
+                        (int) caloriesSlider.getValue(),
+                        (int) servingsSlider.getValue(),
+                        (int) healthRatingSlider.getValue(),
+                        ingredients);
 
-            Parent root = FXMLLoader.load(getClass().getResource("../views/cerealView.fxml"));
-            Scene scene = new Scene(root);
+                Parent root = FXMLLoader.load(getClass().getResource("../views/cerealView.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setUserData(newCereal);
+                stage.setScene(scene);
+                stage.setTitle("Cereal Centre");
+                stage.show();
 
-            //get the stage from the event that was passed in
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setUserData(newCereal);
-
-            stage.setScene(scene);
-            stage.setTitle("Cereal Centre");
-            stage.show();
-
-        } catch(IllegalArgumentException e) {
-            msgLabel.setText(e.getMessage());
+            } catch (IllegalArgumentException e) {
+                msgLabel.setText(e.getMessage());
+            }
         }
-
+        else{
+            msgLabel.setText("Please select a valid Cereal Base.");
+        }
     }
 }

@@ -39,10 +39,8 @@ public class cerealViewController implements Initializable {
     }
 
 //    @FXML
-//    private void receiveData(MouseEvent event) {
-//        Node node = (Node) event.getSource();
-//        Stage stage = (Stage) node.getScene().getWindow();
-//        Cereal newCereal = (Cereal) stage.getUserData();
+//    private void receiveData() {
+//        Cereal newCereal = (Cereal) scene.getUserData();
 //        cerealsListView.getItems().add(newCereal);
 //    }
 

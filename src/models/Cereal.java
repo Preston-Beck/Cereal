@@ -36,7 +36,7 @@ public class Cereal {
         if(name.length() >= 2)
             this.name = name;
         else
-            throw new IllegalArgumentException(name + " must be at least 2 characters long.");
+            throw new IllegalArgumentException("Name must be at least 2 characters long.");
     }
 
     public String getBrand() {
@@ -48,7 +48,7 @@ public class Cereal {
         if(brand.length() >= 2)
             this.brand = brand;
         else
-            throw new IllegalArgumentException(brand + " must be at least 2 characters long.");
+            throw new IllegalArgumentException("Brand must be at least 2 characters long.");
     }
 
     public String getCerealBase() {
@@ -70,8 +70,8 @@ public class Cereal {
         if(validCerealBase.contains(cerealBase.toLowerCase()))
             this.cerealBase = cerealBase;
         else
-            throw new IllegalArgumentException(cerealBase + " is not a member of the valid " +
-                    "cereal bases (wheat, maize, corn, oats, millet, barley, rice, rye, sorghum).");
+            throw new IllegalArgumentException("Choose a valid " +
+                    "cereal base (wheat, maize, corn, oats, millet, barley, rice, rye, sorghum).");
     }
 
     public boolean isDriedFruit() {
