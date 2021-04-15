@@ -144,6 +144,6 @@ public class Cereal {
 
     public String toString()
     {
-        return String.format("%s %s", brand, name);
+        return String.format("%s by %s", name, brand);
     }
 }

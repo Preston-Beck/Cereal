@@ -36,7 +36,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ComboBox fx:id="milkTypeComboBox" prefHeight="25.0" prefWidth="223.0" promptText="Select a milk type" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="milkTypeComboBox" prefWidth="150.0" promptText="Select a milk type" GridPane.columnIndex="1" />
                   <Label text="Milk Type :" />
                   <Label text="Bowl Size (Number of Servings held):" GridPane.rowIndex="1" />
                   <Label text="Fresh Fruit :" GridPane.rowIndex="2" />
@@ -48,18 +48,12 @@
                      </toggleGroup>
                   </RadioButton>
                   <RadioButton fx:id="freshFruitNo" mnemonicParsing="false" selected="true" text="No" toggleGroup="$freshFruit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                  <ComboBox fx:id="cerealComboBox" prefHeight="25.0" prefWidth="223.0" promptText="Select a cereal" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </GridPane>
-            <Button mnemonicParsing="false" onAction="#saveBowlButtonPushed" prefHeight="25.0" prefWidth="92.0" text="Save Bowl" />
-            <Label fx:id="msgLabel" prefHeight="66.0" prefWidth="702.0" text="Label">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
+            <Button mnemonicParsing="false" onAction="#saveBowlButtonPushed" text="Save Bowl" />
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

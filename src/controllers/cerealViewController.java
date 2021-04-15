@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import models.BowlOfCereal;
 import models.Cereal;
@@ -37,6 +38,14 @@ public class cerealViewController implements Initializable {
         cerealsListView.getItems().addAll(startingCereals.getStartingCereals());
     }
 
+//    @FXML
+//    private void receiveData(MouseEvent event) {
+//        Node node = (Node) event.getSource();
+//        Stage stage = (Stage) node.getScene().getWindow();
+//        Cereal newCereal = (Cereal) stage.getUserData();
+//        cerealsListView.getItems().add(newCereal);
+//    }
+
     @FXML
     private void addCerealButtonPushed(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../views/newCerealView.fxml"));
@@ -51,7 +60,7 @@ public class cerealViewController implements Initializable {
     }
 
     @FXML
-    void addBowlButtonPushed(ActionEvent event) throws IOException {
+    private void addBowlButtonPushed(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../views/newBowlOfCerealView.fxml"));
         Scene scene = new Scene(root);
 
