@@ -7,9 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import models.BowlOfCereal;
 import models.Cereal;
@@ -25,33 +23,18 @@ public class cerealViewController implements Initializable {
     private ListView<Cereal> cerealsListView;
 
     @FXML
-    private Button addCerealButton;
-
-    @FXML
     private ListView<BowlOfCereal> bowlsListView;
-
-    @FXML
-    private Button addBowlButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cerealsListView.getItems().addAll(startingCereals.getStartingCereals());
     }
 
-//    @FXML
-//    private void receiveData() {
-//        Cereal newCereal = (Cereal) scene.getUserData();
-//        cerealsListView.getItems().add(newCereal);
-//    }
-
     @FXML
     private void addCerealButtonPushed(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../views/newCerealView.fxml"));
         Scene scene = new Scene(root);
-
-        //get the stage from the event that was passed in
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-
         stage.setScene(scene);
         stage.setTitle("Add a new Cereal");
         stage.show();
@@ -61,12 +44,31 @@ public class cerealViewController implements Initializable {
     private void addBowlButtonPushed(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../views/newBowlOfCerealView.fxml"));
         Scene scene = new Scene(root);
-
-        //get the stage from the event that was passed in
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-
         stage.setScene(scene);
         stage.setTitle("Add a new Bowl");
         stage.show();
+    }
+
+    @FXML
+    private void refreshCerealButtonPushed(ActionEvent event) {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Cereal newCereal = (Cereal) stage.getUserData();
+        if(newCereal != null) {
+            cerealsListView.getItems().add(newCereal);
+            stage.setUserData(null);
+        }
+    }
+
+    @FXML
+    private void refreshBowlButtonPushed(ActionEvent event) {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        BowlOfCereal newBowl = (BowlOfCereal) stage.getUserData();
+        if(newBowl != null) {
+            bowlsListView.getItems().add(newBowl);
+            stage.setUserData(null);
+        }
     }
 }

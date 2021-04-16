@@ -1,6 +1,5 @@
 package models;
 
-import javafx.scene.image.Image;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +7,6 @@ public class Cereal {
     private String name, brand, cerealBase;
     private boolean driedFruit, nutFree;
     private int caloriesPerServing, servings, healthRating;
-//    private Image img;
     private List<String> ingredients;
     private ArrayList<String> validCerealBase;
 
@@ -23,7 +21,6 @@ public class Cereal {
         setCaloriesPerServing(caloriesPerServing);
         setServings(servings);
         setHealthRating(healthRating);
-//        setImg(name);
         setIngredients(ingredients);
     }
 
@@ -122,14 +119,6 @@ public class Cereal {
         else
             throw new IllegalArgumentException(healthRating + " is not a valid rating. Ratings must be between 0 and 100.");
     }
-
-//    public Image getImg() {
-//        return img;
-//    }
-
-//    public void setImg(String name) {
-//        Image img =
-//    }
 
     public List<String> getIngredients() {
         return ingredients;

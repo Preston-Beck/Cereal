@@ -26,7 +26,8 @@
                <children>
                   <Label text="Cereals" />
                   <ListView fx:id="cerealsListView" prefHeight="316.0" prefWidth="306.0" />
-                  <Button fx:id="addCerealButton" mnemonicParsing="false" onAction="#addCerealButtonPushed" text="Add Cereal" />
+                  <Button fx:id="addCerealButton" mnemonicParsing="false" onAction="#addCerealButtonPushed" prefHeight="25.0" prefWidth="131.0" text="Add Cereal" />
+                  <Button mnemonicParsing="false" onAction="#refreshCerealButtonPushed" prefHeight="25.0" prefWidth="131.0" text="Refresh Cereals" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -37,6 +38,7 @@
                   <Label text="Bowls of Cereal" />
                   <ListView fx:id="bowlsListView" prefHeight="316.0" prefWidth="305.0" />
                   <Button fx:id="addBowlButton" mnemonicParsing="false" onAction="#addBowlButtonPushed" text="Add Bowl of Cereal" />
+                  <Button mnemonicParsing="false" onAction="#refreshBowlButtonPushed" prefHeight="25.0" prefWidth="119.0" text="Refresh Bowls" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

@@ -1,6 +1,5 @@
 package models;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class BowlOfCereal {
@@ -90,4 +89,11 @@ public class BowlOfCereal {
         return totalServings;
     }
 
+    public String toString()
+    {
+        if(freshFruit == true)
+            return String.format("A size %d bowl of %s %nwith %s and fresh fruit.", bowlSize, cereals, milkType);
+        else
+            return String.format("A size %d bowl of %s %nwith %s.", bowlSize, cereals, milkType);
+    }
 }

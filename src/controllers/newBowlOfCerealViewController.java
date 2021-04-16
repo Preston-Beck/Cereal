@@ -16,8 +16,6 @@ import utilities.startingCereals;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class newBowlOfCerealViewController implements Initializable {
@@ -53,7 +51,6 @@ public class newBowlOfCerealViewController implements Initializable {
                 "oat milk",
                 "almond milk");
         cerealComboBox.getItems().addAll(startingCereals.getStartingCereals());
-
     }
 
     @FXML
@@ -83,6 +80,7 @@ public class newBowlOfCerealViewController implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("../views/cerealView.fxml"));
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setUserData(newBowl);
                 stage.setScene(scene);
                 stage.setTitle("Cereal Centre");
                 stage.show();
